@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.vuforia.samples.VuforiaSamples.ui.ActivityList.IntroActivity">
+    tools:context="com.jobb.menume.activity.ui.ActivityList.IntroActivity">
 
-    <com.vuforia.samples.VuforiaSamples.ui.ActivityList.CameraView
+    <com.jobb.menume.activity.ui.ActivityList.CameraView
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

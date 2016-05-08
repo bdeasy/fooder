@@ -79,7 +79,7 @@
         -->
         <!-- Splash Screen Activity -->
         <activity
-            android:name=".ui.ActivityList.SplashScreen"
+            android:name="com.jobb.menume.activity.ui.ActivityList.SplashScreen"
             android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize"
             android:noHistory="true"
             android:screenOrientation="portrait">
@@ -90,61 +90,61 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.ActivityList.ActivityLauncher"
+            android:name="com.jobb.menume.activity.ui.ActivityList.ActivityLauncher"
             android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize"
             android:screenOrientation="portrait"></activity>
         <activity
-            android:name=".ui.ActivityList.AboutScreen"
+            android:name="com.jobb.menume.activity.ui.ActivityList.AboutScreen"
             android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize"
             android:noHistory="true"
             android:screenOrientation="portrait"></activity>
         <activity
-            android:name=".app.ImageTargets.ImageTargets"
+            android:name="com.jobb.menume.activity.app.ImageTargets.ImageTargets"
             android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize"
             android:launchMode="singleTask"
             android:theme="@style/SampleAppsTheme"></activity>
         <activity
-            android:name=".app.TextRecognition.TextReco"
+            android:name="com.jobb.menume.activity.app.TextRecognition.TextReco"
             android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize"
             android:launchMode="singleTask"
             android:theme="@style/SampleAppsTheme"></activity>
         <activity
-            android:name=".app.CylinderTargets.CylinderTargets"
+            android:name="com.jobb.menume.activity.app.CylinderTargets.CylinderTargets"
             android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize"
             android:launchMode="singleTask"
             android:theme="@style/SampleAppsTheme"></activity>
         <activity
-            android:name=".app.FrameMarkers.FrameMarkers"
+            android:name="com.jobb.menume.activity.app.FrameMarkers.FrameMarkers"
             android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize"
             android:launchMode="singleTask"
             android:theme="@style/SampleAppsTheme"></activity>
         <activity
-            android:name=".app.VirtualButtons.VirtualButtons"
+            android:name="com.jobb.menume.activity.app.VirtualButtons.VirtualButtons"
             android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize"
             android:launchMode="singleTask"
             android:theme="@style/SampleAppsTheme"></activity>
         <activity
-            android:name=".app.UserDefinedTargets.UserDefinedTargets"
+            android:name="com.jobb.menume.activity.app.UserDefinedTargets.UserDefinedTargets"
             android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize"
             android:launchMode="singleTask"
             android:theme="@style/SampleAppsTheme"></activity>
         <activity
-            android:name=".app.MultiTargets.MultiTargets"
+            android:name="com.jobb.menume.activity.app.MultiTargets.MultiTargets"
             android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize"
             android:launchMode="singleTask"
             android:theme="@style/SampleAppsTheme"></activity>
         <activity
-            android:name=".app.CloudRecognition.CloudReco"
+            android:name="com.jobb.menume.activity.app.CloudRecognition.CloudReco"
             android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize"
             android:launchMode="singleTask"
             android:theme="@style/SampleAppsTheme"></activity>
         <activity
-            android:name=".app.ObjectRecognition.ObjectTargets"
+            android:name="com.jobb.menume.activity.app.ObjectRecognition.ObjectTargets"
             android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize"
             android:launchMode="singleTask"
             android:theme="@style/SampleAppsTheme"></activity>
         <activity
-            android:name=".ui.ActivityList.IntroActivity"
+            android:name="com.jobb.menume.activity.ui.ActivityList.IntroActivity"
             android:label="@string/title_activity_intro"
             android:screenOrientation="portrait"></activity>
     </application>
