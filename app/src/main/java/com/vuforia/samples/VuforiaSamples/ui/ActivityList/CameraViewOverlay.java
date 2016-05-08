@@ -11,7 +11,8 @@ import android.view.View;
  */
 public class CameraViewOverlay extends View {
     private Paint paint = new Paint();
-    CameraViewOverlay(Context context) {
+
+    public CameraViewOverlay(Context context) {
         super(context);
     }
 
