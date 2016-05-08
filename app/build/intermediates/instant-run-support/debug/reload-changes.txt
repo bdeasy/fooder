@@ -1,0 +1,2 @@
+CHANGED,/Users/joseportocarrero/Downloads/VuforiaSamples-5-5-9/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/vuforia/samples/VuforiaSamples/app/ImageTargets/Plane$override.class
+CHANGED,/Users/joseportocarrero/Downloads/VuforiaSamples-5-5-9/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/android/tools/fd/runtime/AppPatchesLoaderImpl.class
