@@ -306,7 +306,7 @@ public class ImageTargets extends Activity implements SampleApplicationControl,
             null);
         
         mUILayout.setVisibility(View.VISIBLE);
-        mUILayout.setBackgroundColor(Color.BLACK);
+        mUILayout.setBackgroundColor(Color.parseColor("#CC00BCD4"));
         
         // Gets a reference to the loading dialog
         loadingDialogHandler.mLoadingDialogContainer = mUILayout
