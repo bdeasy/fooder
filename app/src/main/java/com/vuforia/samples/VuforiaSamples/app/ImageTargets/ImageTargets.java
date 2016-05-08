@@ -10,9 +10,6 @@ countries.
 
 package com.vuforia.samples.VuforiaSamples.app.ImageTargets;
 
-import java.util.ArrayList;
-import java.util.Vector;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -29,7 +26,9 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
+import android.view.animation.AnimationUtils;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Switch;
 import android.widget.Toast;
@@ -37,8 +36,8 @@ import android.widget.Toast;
 import com.vuforia.CameraDevice;
 import com.vuforia.DataSet;
 import com.vuforia.ObjectTracker;
-import com.vuforia.State;
 import com.vuforia.STORAGE_TYPE;
+import com.vuforia.State;
 import com.vuforia.Trackable;
 import com.vuforia.Tracker;
 import com.vuforia.TrackerManager;
@@ -46,13 +45,16 @@ import com.vuforia.Vuforia;
 import com.vuforia.samples.SampleApplication.SampleApplicationControl;
 import com.vuforia.samples.SampleApplication.SampleApplicationException;
 import com.vuforia.samples.SampleApplication.SampleApplicationSession;
-import com.vuforia.samples.SampleApplication.utils.LoadingDialogHandler;
 import com.vuforia.samples.SampleApplication.utils.SampleApplicationGLView;
 import com.vuforia.samples.SampleApplication.utils.Texture;
 import com.vuforia.samples.VuforiaSamples.R;
+import com.vuforia.samples.VuforiaSamples.ui.ActivityList.CameraViewOverlay;
 import com.vuforia.samples.VuforiaSamples.ui.SampleAppMenu.SampleAppMenu;
 import com.vuforia.samples.VuforiaSamples.ui.SampleAppMenu.SampleAppMenuGroup;
 import com.vuforia.samples.VuforiaSamples.ui.SampleAppMenu.SampleAppMenuInterface;
+
+import java.util.ArrayList;
+import java.util.Vector;
 
 
 public class ImageTargets extends Activity implements SampleApplicationControl,
@@ -87,11 +89,11 @@ public class ImageTargets extends Activity implements SampleApplicationControl,
     private View mFlashOptionView;
     
     private RelativeLayout mUILayout;
-    
+    private ImageView imageView;
+    private ImageView loadingView;
+
     private SampleAppMenu mSampleAppMenu;
-    
-    LoadingDialogHandler loadingDialogHandler = new LoadingDialogHandler(this);
-    
+
     // Alert Dialog used to display SDK errors
     private AlertDialog mErrorDialog;
     
@@ -304,22 +306,61 @@ public class ImageTargets extends Activity implements SampleApplicationControl,
     {
         mUILayout = (RelativeLayout) View.inflate(this, R.layout.camera_overlay,
             null);
-        
+
         mUILayout.setVisibility(View.VISIBLE);
         mUILayout.setBackgroundColor(Color.parseColor("#CC00BCD4"));
         
-        // Gets a reference to the loading dialog
-        loadingDialogHandler.mLoadingDialogContainer = mUILayout
-            .findViewById(R.id.loading_indicator);
+//        // Gets a reference to the loading dialog
+//        loadingDialogHandler.mLoadingDialogContainer = mUILayout
+//            .findViewById(R.id.loading_indicator);
+//
+//        // Shows the loading indicator at start
+//        loadingDialogHandler
+//            .sendEmptyMessage(LoadingDialogHandler.SHOW_LOADING_DIALOG);
         
-        // Shows the loading indicator at start
-        loadingDialogHandler
-            .sendEmptyMessage(LoadingDialogHandler.SHOW_LOADING_DIALOG);
-        
+//        // Adds the inflated layout to the view
+//        addContentView(mUILayout, new LayoutParams(LayoutParams.MATCH_PARENT,
+//            LayoutParams.MATCH_PARENT));
+
+        //START
+        imageView = new ImageView(this);
+        imageView.setImageResource(R.drawable.fa_camera_white_no_lens);
+        RelativeLayout.LayoutParams layout = new RelativeLayout.LayoutParams(500, 500);
+        imageView.setLayoutParams(layout);
+        imageView.setTranslationY(-15f);
+        layout.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE);
+        layout.addRule(RelativeLayout.CENTER_HORIZONTAL, RelativeLayout.TRUE);
+        layout.addRule(RelativeLayout.CENTER_VERTICAL, RelativeLayout.TRUE);
+
+        loadingView = new ImageView(this);
+        loadingView.setImageResource(R.drawable.fa_camera_lens);
+        RelativeLayout.LayoutParams loadingLayoutParams = new RelativeLayout.LayoutParams(150, 150);
+        loadingView.setLayoutParams(loadingLayoutParams);
+        loadingLayoutParams.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE);
+        loadingLayoutParams.addRule(RelativeLayout.CENTER_HORIZONTAL, RelativeLayout.TRUE);
+        loadingLayoutParams.addRule(RelativeLayout.CENTER_VERTICAL, RelativeLayout.TRUE);
+
+        mUILayout.addView(imageView);
+        mUILayout.addView(loadingView);
+
+        loadingView.startAnimation(AnimationUtils.loadAnimation(this, R.anim.rotate));
+
+//        setContentView(mUILayout);
         // Adds the inflated layout to the view
         addContentView(mUILayout, new LayoutParams(LayoutParams.MATCH_PARENT,
-            LayoutParams.MATCH_PARENT));
+                LayoutParams.MATCH_PARENT));
         
+    }
+
+    public void hideLoader() {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                loadingView.clearAnimation();
+                imageView.setVisibility(View.GONE);
+                loadingView.setVisibility(View.GONE);
+            }
+        });
     }
     
     

@@ -1,16 +1,14 @@
 package com.vuforia.samples.VuforiaSamples.ui.ActivityList;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.app.Activity;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
-import com.vuforia.ImageTarget;
 import com.vuforia.samples.VuforiaSamples.R;
 import com.vuforia.samples.VuforiaSamples.app.ImageTargets.ImageTargets;
 
@@ -32,6 +30,7 @@ public class IntroActivity extends Activity {
         imageView.setImageResource(R.drawable.fa_camera_white);
         RelativeLayout.LayoutParams layout = new RelativeLayout.LayoutParams(500, 500);
         imageView.setLayoutParams(layout);
+        imageView.setTranslationY(-15f);
         layout.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE);
         layout.addRule(RelativeLayout.CENTER_HORIZONTAL, RelativeLayout.TRUE);
         layout.addRule(RelativeLayout.CENTER_VERTICAL, RelativeLayout.TRUE);
