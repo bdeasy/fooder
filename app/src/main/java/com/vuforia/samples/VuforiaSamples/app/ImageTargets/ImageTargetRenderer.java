@@ -133,14 +133,14 @@ public class ImageTargetRenderer implements GLSurfaceView.Renderer
         {
             BitmapFactory.Options options = new BitmapFactory.Options();
             options.inScaled = false;
-            Bitmap bitmap = BitmapFactory.decodeResource(mActivity.getResources(), R.drawable.icon);
+            Bitmap bitmap = BitmapFactory.decodeResource(mActivity.getResources(), R.drawable.fish_and_chips_pic);
             GLES20.glGenTextures(1, t.mTextureID, 0);
             GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, t.mTextureID[0]);
             GLES20.glTexParameterf(GLES20.GL_TEXTURE_2D,
                 GLES20.GL_TEXTURE_MIN_FILTER, GLES20.GL_LINEAR);
             GLES20.glTexParameterf(GLES20.GL_TEXTURE_2D,
                 GLES20.GL_TEXTURE_MAG_FILTER, GLES20.GL_LINEAR);
-            GLUtils.texImage2D(GLES20.GL_TEXTURE_2D, 0, bitmap, 0);
+//            GLUtils.texImage2D(GLES20.GL_TEXTURE_2D, 0, bitmap, 0);
 //            GLES20.glTexImage2D(GLES20.GL_TEXTURE_2D, 0, GLES20.GL_RGBA,
 //                t.mWidth, t.mHeight, 0, GLES20.GL_RGBA,
 //                GLES20.GL_UNSIGNED_BYTE, t.mData);
@@ -270,6 +270,8 @@ public class ImageTargetRenderer implements GLSurfaceView.Renderer
                 GLES20.glDisableVertexAttribArray(vertexHandle);
                 GLES20.glDisableVertexAttribArray(normalHandle);
                 GLES20.glDisableVertexAttribArray(textureCoordHandle);
+
+                GLUtils.texImage2D(GLES20.GL_TEXTURE_2D, 0, ImageRendererFactory.getDisplayImage(mActivity, trackable.getName()), 0);
             } else
             {
                 GLES20.glDisable(GLES20.GL_CULL_FACE);
@@ -292,6 +294,8 @@ public class ImageTargetRenderer implements GLSurfaceView.Renderer
                 GLES20.glUniform1i(texSampler2DHandle, 0);
                 GLES20.glDrawArrays(GLES20.GL_TRIANGLES, 0,
                     mBuildingsModel.getNumObjectVertex());
+
+                GLUtils.texImage2D(GLES20.GL_TEXTURE_2D, 0, ImageRendererFactory.getDisplayImage(mActivity, trackable.getName()), 0);
                 
                 SampleUtils.checkGLError("Renderer DrawBuildings");
             }
