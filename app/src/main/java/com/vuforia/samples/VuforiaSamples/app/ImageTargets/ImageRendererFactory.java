@@ -64,7 +64,7 @@ public class ImageRendererFactory {
         } else if(name.equals("chicken_sandwich")){
             return getBitmap(activity, R.drawable.chicken_sandwich);
         }
-        return getBitmap(activity, R.drawable.icon);
+        return getBitmap(activity, R.drawable.ic_launcher);
     }
 
     /**

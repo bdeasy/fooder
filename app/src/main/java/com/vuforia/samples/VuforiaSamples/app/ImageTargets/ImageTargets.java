@@ -147,6 +147,7 @@ public class ImageTargets extends Activity implements SampleApplicationControl,
         {
             // Generates a Handler to trigger autofocus
             // after 1 second
+            Log.d("JOSE", "FOCUS");
             autofocusHandler.postDelayed(new Runnable()
             {
                 public void run()
@@ -158,7 +159,9 @@ public class ImageTargets extends Activity implements SampleApplicationControl,
                         Log.e("SingleTapUp", "Unable to trigger focus");
                 }
             }, 1000L);
-            
+
+
+
             return true;
         }
     }
@@ -514,7 +517,7 @@ public class ImageTargets extends Activity implements SampleApplicationControl,
         
         TrackerManager tManager = TrackerManager.getInstance();
         Tracker tracker;
-        
+
         // Trying to initialize the image tracker
         tracker = tManager.initTracker(ObjectTracker.getClassType());
         if (tracker == null)
@@ -580,7 +583,7 @@ public class ImageTargets extends Activity implements SampleApplicationControl,
         // Process the Gestures
         if (mSampleAppMenu != null && mSampleAppMenu.processEvent(event))
             return true;
-        
+
         return mGestureDetector.onTouchEvent(event);
     }
     

@@ -125,6 +125,7 @@ public class ImageTargetRenderer implements GLSurfaceView.Renderer
         mPlane = new Plane();
         
         mRenderer = Renderer.getInstance();
+
         
         GLES20.glClearColor(0.0f, 0.0f, 0.0f, Vuforia.requiresAlpha() ? 0.0f
             : 1.0f);
@@ -175,6 +176,10 @@ public class ImageTargetRenderer implements GLSurfaceView.Renderer
 
     }
 
+
+    public Renderer getmRenderer() {
+        return mRenderer;
+    }
 
     // The render function.
     private void renderFrame()
