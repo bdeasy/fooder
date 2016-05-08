@@ -22,10 +22,10 @@ import android.widget.RelativeLayout;
 import com.vuforia.samples.VuforiaSamples.R;
 
 
-public class ActivitySplashScreen extends Activity
+public class SplashScreen extends Activity
 {
     
-    private static long SPLASH_MILLIS = 450;
+    private static long SPLASH_MILLIS = 2500;
     
     
     @Override
@@ -52,8 +52,8 @@ public class ActivitySplashScreen extends Activity
             public void run()
             {
                 
-                Intent intent = new Intent(ActivitySplashScreen.this,
-                    ActivityLauncher.class);
+                Intent intent = new Intent(SplashScreen.this,
+                    IntroActivity.class);
                 startActivity(intent);
                 
             }
