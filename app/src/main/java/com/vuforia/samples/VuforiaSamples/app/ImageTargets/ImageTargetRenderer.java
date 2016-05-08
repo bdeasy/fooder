@@ -136,10 +136,8 @@ public class ImageTargetRenderer implements GLSurfaceView.Renderer
             Bitmap bitmap = BitmapFactory.decodeResource(mActivity.getResources(), R.drawable.fish_and_chips_pic);
             GLES20.glGenTextures(1, t.mTextureID, 0);
             GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, t.mTextureID[0]);
-            GLES20.glTexParameterf(GLES20.GL_TEXTURE_2D,
-                GLES20.GL_TEXTURE_MIN_FILTER, GLES20.GL_LINEAR);
-            GLES20.glTexParameterf(GLES20.GL_TEXTURE_2D,
-                GLES20.GL_TEXTURE_MAG_FILTER, GLES20.GL_LINEAR);
+            GLES20.glTexParameterf(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_MIN_FILTER, GLES20.GL_LINEAR);
+            GLES20.glTexParameterf(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_MAG_FILTER, GLES20.GL_LINEAR);
 //            GLUtils.texImage2D(GLES20.GL_TEXTURE_2D, 0, bitmap, 0);
 //            GLES20.glTexImage2D(GLES20.GL_TEXTURE_2D, 0, GLES20.GL_RGBA,
 //                t.mWidth, t.mHeight, 0, GLES20.GL_RGBA,
@@ -221,10 +219,8 @@ public class ImageTargetRenderer implements GLSurfaceView.Renderer
             
             if (!mActivity.isExtendedTrackingActive())
             {
-                Matrix.translateM(modelViewMatrix, 0, 0.0f, 0.0f,
-                    OBJECT_SCALE_FLOAT);
-                Matrix.scaleM(modelViewMatrix, 0, OBJECT_SCALE_FLOAT,
-                    OBJECT_SCALE_FLOAT, OBJECT_SCALE_FLOAT);
+                Matrix.translateM(modelViewMatrix, 0, 0.0f, 0.0f, OBJECT_SCALE_FLOAT);
+                Matrix.scaleM(modelViewMatrix, 0, OBJECT_SCALE_FLOAT, OBJECT_SCALE_FLOAT, OBJECT_SCALE_FLOAT);
             } else
             {
                 Matrix.rotateM(modelViewMatrix, 0, 90.0f, 1.0f, 0, 0);
@@ -240,12 +236,9 @@ public class ImageTargetRenderer implements GLSurfaceView.Renderer
             
             if (!mActivity.isExtendedTrackingActive())
             {
-                GLES20.glVertexAttribPointer(vertexHandle, 3, GLES20.GL_FLOAT,
-                    false, 0, mPlane.getVertices());
-                GLES20.glVertexAttribPointer(normalHandle, 3, GLES20.GL_FLOAT,
-                    false, 0, mPlane.getNormals());
-                GLES20.glVertexAttribPointer(textureCoordHandle, 2,
-                    GLES20.GL_FLOAT, false, 0, mPlane.getTexCoords());
+                GLES20.glVertexAttribPointer(vertexHandle, 3, GLES20.GL_FLOAT, false, 0, mPlane.getVertices());
+                GLES20.glVertexAttribPointer(normalHandle, 3, GLES20.GL_FLOAT, false, 0, mPlane.getNormals());
+                GLES20.glVertexAttribPointer(textureCoordHandle, 2, GLES20.GL_FLOAT, false, 0, mPlane.getTexCoords());
                 
                 GLES20.glEnableVertexAttribArray(vertexHandle);
                 GLES20.glEnableVertexAttribArray(normalHandle);
@@ -253,18 +246,14 @@ public class ImageTargetRenderer implements GLSurfaceView.Renderer
                 
                 // activate texture 0, bind it, and pass to shader
                 GLES20.glActiveTexture(GLES20.GL_TEXTURE0);
-                GLES20.glBindTexture(GLES20.GL_TEXTURE_2D,
-                    mTextures.get(textureIndex).mTextureID[0]);
+                GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, mTextures.get(textureIndex).mTextureID[0]);
                 GLES20.glUniform1i(texSampler2DHandle, 0);
                 
                 // pass the model view matrix to the shader
-                GLES20.glUniformMatrix4fv(mvpMatrixHandle, 1, false,
-                    modelViewProjection, 0);
+                GLES20.glUniformMatrix4fv(mvpMatrixHandle, 1, false, modelViewProjection, 0);
                 
                 // finally draw the teapot
-                GLES20.glDrawElements(GLES20.GL_TRIANGLES,
-                    mPlane.getNumObjectIndex(), GLES20.GL_UNSIGNED_SHORT,
-                    mPlane.getIndices());
+                GLES20.glDrawElements(GLES20.GL_TRIANGLES, mPlane.getNumObjectIndex(), GLES20.GL_UNSIGNED_SHORT, mPlane.getIndices());
                 
                 // disable the enabled arrays
                 GLES20.glDisableVertexAttribArray(vertexHandle);
@@ -276,7 +265,7 @@ public class ImageTargetRenderer implements GLSurfaceView.Renderer
             {
                 GLES20.glDisable(GLES20.GL_CULL_FACE);
                 GLES20.glVertexAttribPointer(vertexHandle, 3, GLES20.GL_FLOAT,
-                    false, 0, mBuildingsModel.getVertices());
+                        false, 0, mBuildingsModel.getVertices());
                 GLES20.glVertexAttribPointer(normalHandle, 3, GLES20.GL_FLOAT,
                     false, 0, mBuildingsModel.getNormals());
                 GLES20.glVertexAttribPointer(textureCoordHandle, 2,
@@ -288,12 +277,12 @@ public class ImageTargetRenderer implements GLSurfaceView.Renderer
                 
                 GLES20.glActiveTexture(GLES20.GL_TEXTURE0);
                 GLES20.glBindTexture(GLES20.GL_TEXTURE_2D,
-                    mTextures.get(3).mTextureID[0]);
+                        mTextures.get(3).mTextureID[0]);
                 GLES20.glUniformMatrix4fv(mvpMatrixHandle, 1, false,
-                    modelViewProjection, 0);
+                        modelViewProjection, 0);
                 GLES20.glUniform1i(texSampler2DHandle, 0);
                 GLES20.glDrawArrays(GLES20.GL_TRIANGLES, 0,
-                    mBuildingsModel.getNumObjectVertex());
+                        mBuildingsModel.getNumObjectVertex());
 
                 GLUtils.texImage2D(GLES20.GL_TEXTURE_2D, 0, ImageRendererFactory.getDisplayImage(mActivity, trackable.getName()), 0);
                 
