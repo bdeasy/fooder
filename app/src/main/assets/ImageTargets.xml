@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
-    <ImageTarget name="tuscan_lobster_roll" size="659.000000 119.000000" />
-    <ImageTarget name="the_salty_dog" size="787.000000 243.000000" />
-    <ImageTarget name="surf_n_turf_roll" size="964.000000 238.000000" />
-    <ImageTarget name="peel_and_eat_shrimp" size="752.000000 187.000000" />
-    <ImageTarget name="new_england_seafood_boil" size="880.000000 355.000000" />
-    <ImageTarget name="mojito" size="448.000000 135.000000" />
-    <ImageTarget name="margarita" size="440.000000 221.000000" />
-    <ImageTarget name="maine_lobster_roll" size="864.000000 281.000000" />
-    <ImageTarget name="mai_tai" size="438.000000 208.000000" />
-    <ImageTarget name="lobster_mac_and_cheese" size="855.000000 235.000000" />
-    <ImageTarget name="lobster_dinner" size="734.000000 347.000000" />
-    <ImageTarget name="lobster_citrus_salad" size="847.000000 279.000000" />
-    <ImageTarget name="lobster_cheese_fries" size="758.000000 230.000000" />
-    <ImageTarget name="hot_crab_dip" size="766.000000 256.000000" />
-    <ImageTarget name="hook_burger" size="808.000000 253.000000" />
-    <ImageTarget name="fried_pickles" size="765.000000 189.000000" />
-    <ImageTarget name="fried_oyster_roll" size="823.000000 212.000000" />
-    <ImageTarget name="fried_oyster_rockafella" size="758.000000 230.000000" />
-    <ImageTarget name="drunken_cherry_lemonade" size="404.000000 250.000000" />
-    <ImageTarget name="crab_cake_sandwich" size="797.000000 195.000000" />
-    <ImageTarget name="connecticut_lobster_roll" size="810.000000 168.000000" />
-    <ImageTarget name="cobbster_salad" size="851.000000 313.000000" />
-    <ImageTarget name="chicken_sandwich" size="826.000000 143.000000" />
+    <ImageTarget name="tuscan_lobster_roll" size="320 58" />
+    <ImageTarget name="the_salty_dog" size="320 99" />
+    <ImageTarget name="surf_n_turf_roll" size="320 79" />
+    <ImageTarget name="peel_and_eat_shrimp" size="320 79" />
+    <ImageTarget name="new_england_seafood_boil" size="320 129" />
+    <ImageTarget name="mojito" size="320 96" />
+    <ImageTarget name="margarita" size="320 160" />
+    <ImageTarget name="maine_lobster_roll" size="320 104" />
+    <ImageTarget name="mai_tai" size="320 151" />
+    <ImageTarget name="lobster_mac_and_cheese" size="320 88" />
+    <ImageTarget name="lobster_dinner" size="320 151" />
+    <ImageTarget name="lobster_citrus_salad" size="320 105" />
+    <ImageTarget name="lobster_cheese_fries" size="320 97" />
+    <ImageTarget name="hot_crab_dip" size="320 107" />
+    <ImageTarget name="hook_burger" size="320 100" />
+    <ImageTarget name="fried_pickles" size="320 79" />
+    <ImageTarget name="fried_oyster_roll" size="320 82" />
+    <ImageTarget name="fried_oyster_rockafella" size="320 97" />
+    <ImageTarget name="drunken_cherry_lemonade" size="320 198" />
+    <ImageTarget name="crab_cake_sandwich" size="320 78" />
+    <ImageTarget name="connecticut_lobster_roll" size="320 66" />
+    <ImageTarget name="cobbster_salad" size="320 118" />
+    <ImageTarget name="chicken_sandwich" size="320 55" />
 
-    <ImageTarget name="blt_lobster_roll" size="874.000000 244.000000" />
+    <ImageTarget name="blt_lobster_roll" size="320 89" />
     <ImageTarget name="fish_and_chips" size="320 96" />
     <ImageTarget name="fresh_clam_strips" size="320 103" />
   </Tracking>
